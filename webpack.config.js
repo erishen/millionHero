@@ -7,7 +7,8 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 var devConfig = {
     entry: {
         inke: ['./client/wildsPAGE/inke', hotMiddlewareScript],
-        seniverse: ['./client/wildsPAGE/seniverse', hotMiddlewareScript]
+        seniverse: ['./client/wildsPAGE/seniverse', hotMiddlewareScript],
+        react: ['./client/wildsPAGE/react', hotMiddlewareScript]
     },
     output: {
         filename: './wildsPAGE/[name]/bundle.js',
@@ -37,6 +38,10 @@ var devConfig = {
                 'resolve-url-loader',
                 'less-loader?sourceMap'
             ]
+        }, {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            use: ['babel-loader']
         }]
     },
     plugins: [

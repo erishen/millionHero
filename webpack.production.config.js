@@ -8,7 +8,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var productionConfig = [{
     entry: {
         inke: './client/wildsPAGE/inke',
-        seniverse: './client/wildsPAGE/seniverse'
+        seniverse: './client/wildsPAGE/seniverse',
+        react: './client/wildsPAGE/react'
     },
     output: {
         filename: './wildsPAGE/[name]/bundle.js',
@@ -33,6 +34,10 @@ var productionConfig = [{
                 fallback: 'style-loader',
                 use: ['css-loader', 'resolve-url-loader', 'less-loader?sourceMap']
             })
+        }, {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            use: ['babel-loader']
         }]
     },
     plugins: [

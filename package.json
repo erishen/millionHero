@@ -13,7 +13,7 @@
     "browsersync": "cross-env NODE_ENV=dev node app_browsersync",
     "build": "webpack",
     "production": "webpack --config webpack.production.config.js -p & cross-env NODE_ENV=production node app",
-    "clean": "rm -fr public/pages/*"
+    "clean": "rm -fr public/wildsPAGE/*"
   },
   "license": "MIT",
   "dependencies": {

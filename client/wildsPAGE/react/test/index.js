@@ -30,7 +30,13 @@ export default class TestPage extends Component<{}> {
         let { pageNum } = this.state;
 
         return (
-            <div>TEST</div>
+            <div className="test">
+                <div>{pageNum}</div>
+                <div className="row">
+                    <button onClick={()=>store.dispatch(actions.addPageNum())}> + </button>
+                    <button onClick={()=>store.dispatch(actions.subtractPageNum())}> - </button>
+                </div>
+            </div>
         );
     }
 }

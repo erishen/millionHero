@@ -10,12 +10,3 @@ ReactDOM.render(
     <Test/>,
     document.getElementById('app')
 );
-
-function fixedEncodeURIComponent (str) {
-    return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
-        return '%' + c.charCodeAt(0).toString(16);
-    });
-}
-
-var testStr = "[!'()*]";
-console.log('fixedEncodeURIComponent', encodeURIComponent(testStr), fixedEncodeURIComponent(testStr));
